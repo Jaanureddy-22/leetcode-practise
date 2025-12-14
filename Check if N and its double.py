@@ -4,11 +4,14 @@ class Solution(object):
         :type arr: List[int]
         :rtype: bool
         """
-        n=len(arr)
-        for i in range(n-1,-1,-1):   
-            for j in range(n):
-                if (i != j):
-                    if(0 <= i and j<n):
-                        if arr[i]==2*arr[j]:
-                          return True
+        
+        visited = set()
+        for  val in arr:
+            if 2*val in visited or ( val%2 ==0 and val//2 in visited):
+                return True
+            visited.add(val)
         return False
+
+
+
+
