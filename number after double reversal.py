@@ -5,8 +5,7 @@ class Solution(object):
         :rtype: bool
         """
      
-        val=int(str(abs(num))[::-1])*(-1 if num <0 else 1)
-        if num == int(str(abs(val))[::-1]*(-1 if val < 0 else 1)):
+        if num%10 != 0  or num == 0:
             return True
         return False
         
